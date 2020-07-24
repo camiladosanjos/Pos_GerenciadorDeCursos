@@ -4,12 +4,12 @@ using System.Text;
 
 namespace Cursos.Domain.Interfaces.Services
 {
-    public interface IBaseService<T> where T: class
+    public interface IBaseService<T> where T : class
     {
-        IEnumerable<T> List { get; }
-        int Add(T entity);
-        void Remove(int id);
+        IEnumerable<T> List();
+        void Add(T entity);
+        void Remove(Guid id);
         void Update(T entity);
-        T Find(int Id);
+        T Find(Guid id);
     }
 }
