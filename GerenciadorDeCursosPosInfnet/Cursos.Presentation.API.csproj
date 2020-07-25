@@ -17,6 +17,10 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Cursos.Application\Cursos.Application.csproj" />
+  </ItemGroup>
+
 
 
 </Project>
