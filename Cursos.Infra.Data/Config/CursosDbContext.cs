@@ -26,7 +26,7 @@ namespace Cursos.Infra.Data.Config
                 "Database=Cursos;MultipleActiveResultSets=true;" +
                 "Trusted_Connection=true;";
 
-            //optionsBuilder.UseSqlServer(connectionString);
+            optionsBuilder.UseSqlServer(connectionString);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
