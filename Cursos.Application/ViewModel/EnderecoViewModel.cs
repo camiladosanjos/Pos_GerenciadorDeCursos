@@ -6,7 +6,7 @@ namespace Cursos.Application.ViewModel
 {
     public class EnderecoViewModel
     {
-        public EnderecoViewModel   ()
+        public EnderecoViewModel()
         {
             EnderecoId = new Guid();
         }
@@ -17,6 +17,7 @@ namespace Cursos.Application.ViewModel
         public string Complemento { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
-        public InstituicaoViewModel Instituicao { get; set; }
+        public Guid InstituicaoId { get; set; }
+        public virtual InstituicaoViewModel Instituicao { get; set; }
     }
 }
