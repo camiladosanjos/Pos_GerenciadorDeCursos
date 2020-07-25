@@ -8,7 +8,7 @@ namespace Cursos.Domain.Interfaces.Services
     {
         IEnumerable<T> List();
         void Add(T entity);
-        void Remove(Guid id);
+        void Remove(T id);
         void Update(T entity);
         T Find(Guid id);
     }
