@@ -17,6 +17,7 @@ namespace Cursos.Domain.Entities
         public string Complemento { get; set; }
         public string Bairro { get; set; }
         public string Cidade { get; set; }
-        public Instituicao Instituicao { get; set; }
+        public Guid InstituicaoId { get; set; }
+        public virtual Instituicao Instituicao { get; set; }
     }
 }

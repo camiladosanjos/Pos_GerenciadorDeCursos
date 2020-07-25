@@ -5,14 +5,15 @@ namespace Cursos.Domain.Entities
 {
     public class Departamento
     {
-        public Departamento()
-        {
-            DepartamentoId = new Guid();
-        }
-
         public Guid DepartamentoId { get; set; }
         public string Nome { get; set; }
-        public Instituicao Instituicao { get; set; }
-        public IList<Curso> ListCursos { get; set; }
+        public Guid InstituicaoId { get; set; }
+        public virtual Instituicao Instituicao { get; set; }
+        public ICollection<Curso> Cursos { get; set; }
+        public Departamento()
+        {
+            Cursos = new List<Curso>();
+            DepartamentoId = new Guid();
+        }
     }
 }

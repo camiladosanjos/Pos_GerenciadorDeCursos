@@ -6,10 +6,10 @@ namespace Cursos.Domain.Entities
 {
     public class DetalhamentoCurso
     {
-        public Guid CursoId { get; set; }
-        public Curso Curso { get; set; }
+        public Guid CursoDisciplinaId { get; set; }
+        public Curso CursoDisciplina { get; set; }
 
-        public Guid DisciplinaId { get; set; }
-        public Disciplina Disciplina { get; set; }
+        public Guid DisciplinaCursoId { get; set; }
+        public Disciplina DisciplinaCurso { get; set; }
     }
 }
