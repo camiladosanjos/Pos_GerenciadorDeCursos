@@ -5,7 +5,7 @@ using System.Text;
 
 namespace Cursos.Domain.Interfaces.Services
 {
-    public interface IDisciplicaService : IBaseService<Disciplina>
+    public interface IDetalhamentoCursoService : IBaseService<DetalhamentoCurso>
     {
     }
 }
