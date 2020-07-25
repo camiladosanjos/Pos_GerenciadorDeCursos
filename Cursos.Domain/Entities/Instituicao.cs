@@ -8,10 +8,9 @@ namespace Cursos.Domain.Entities
     {
         public Guid InstituicaoId { get; set; }
         public string Nome { get; set; }
-        public IList<Departamento> ListDepartamentos { get; set; }
         public Guid EnderecoId { get; set; }
         public virtual Endereco Endereco { get; set; }
-        public ICollection<Departamento> Departamentos { get; set; }
+        public virtual ICollection<Departamento> Departamentos { get; set; }
         public Instituicao()
         {
             Departamentos = new List<Departamento>();

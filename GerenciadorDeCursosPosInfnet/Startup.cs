@@ -1,7 +1,11 @@
 using Autofac;
+using AutoMapper;
+using Cursos.Application.AutoMapper;
 using Cursos.Infra.CrossCutting;
+using Cursos.Infra.Data.Config;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -21,8 +25,23 @@ namespace GerenciadorDeCursosPosInfnet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSwaggerGen();
             services.AddControllersWithViews();
+            services.AddSwaggerGen();
+
+            var connection = Configuration["SqlConnection:SqlConnectionString"];
+            services.AddDbContext<CursosDbContext>(options => options.UseSqlServer(connection, b => b.MigrationsAssembly("Cursos.Presentation.API")));
+
+            var mappingConfig = new MapperConfiguration(x =>
+            {
+                x.AddProfile(new DomainToViewModelMappingProfile());
+                x.AddProfile(new ViewModelToDomainMappingProfile());
+                x.AllowNullCollections = true;
+                x.AllowNullDestinationValues = true;
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
+
         }
 
         public void ConfigureContainer(ContainerBuilder Builder)
@@ -37,11 +56,6 @@ namespace GerenciadorDeCursosPosInfnet
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-
             app.UseSwagger();
 
             app.UseSwaggerUI(c =>

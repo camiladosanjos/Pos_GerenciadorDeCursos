@@ -9,7 +9,7 @@ namespace Cursos.Domain.Entities
         public Guid DisciplinaId { get; set; }
         public string Nome { get; set; }
         public int CargaHoraria { get; set; }
-        public ICollection<DetalhamentoCurso> Cursos { get; set; }
+        public virtual ICollection<DetalhamentoCurso> Cursos { get; set; }
         public Disciplina()
         {
             Cursos = new List<DetalhamentoCurso>();

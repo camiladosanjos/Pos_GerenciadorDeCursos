@@ -6,6 +6,7 @@ namespace Cursos.Domain.Entities
 {
     public class DetalhamentoCurso
     {
+        public Guid Id { get; set; }
         public Guid CursoDisciplinaId { get; set; }
         public Curso CursoDisciplina { get; set; }
 

@@ -31,7 +31,6 @@ namespace Cursos.Application.AutoMapper
                 .ReverseMap();
             CreateMap<Instituicao, InstituicaoViewModel>()
                 .ForMember(dest => dest.Endereco, opt => opt.MapFrom(src => src.Endereco))
-                .ForMember(dest => dest.ListDepartamentos, opt => opt.MapFrom(src => src.ListDepartamentos))
                 .ForMember(dest => dest.Departamentos, opt => opt.MapFrom(src => src.Departamentos))
                 .ReverseMap();
         }

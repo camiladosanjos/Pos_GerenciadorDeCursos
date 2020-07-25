@@ -8,7 +8,6 @@ namespace Cursos.Application.ViewModel
     {
         public Guid InstituicaoId { get; set; }
         public string Nome { get; set; }
-        public IList<DepartamentoViewModel> ListDepartamentos { get; set; }
         public Guid EnderecoId { get; set; }
         public virtual EnderecoViewModel Endereco { get; set; }
         public ICollection<DepartamentoViewModel> Departamentos { get; set; }
