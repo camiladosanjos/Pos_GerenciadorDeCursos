@@ -8,8 +8,8 @@ namespace Cursos.Domain.Interfaces.Repositories
     {
         IEnumerable<T> List();
         void Add(T entity);
-        void Remove(Guid id);
+        void Remove(T entity);
         void Update(T entity);
-        T Find(Guid id);
+        T Find(Guid entity);
     }
 }
