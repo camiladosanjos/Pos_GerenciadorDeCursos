@@ -28,14 +28,14 @@ namespace Cursos.Domain.Services
             return _baseRepository.Find(id);
         }
 
+        public void Remove(T entity)
+        {
+            _baseRepository.Remove(entity);
+        }
+
         public void Update(T entity)
         {
             _baseRepository.Update(entity);
-        }
-
-        public void Remove(T id)
-        {
-            _baseRepository.Remove(id);
         }
     }
 }
