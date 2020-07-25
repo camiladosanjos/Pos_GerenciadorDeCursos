@@ -4,4 +4,13 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="5.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Cursos.Application\Cursos.Application.csproj" />
+    <ProjectReference Include="..\Cursos.Infra.Data\Cursos.Infra.Data.csproj" />
+  </ItemGroup>
+
 </Project>
