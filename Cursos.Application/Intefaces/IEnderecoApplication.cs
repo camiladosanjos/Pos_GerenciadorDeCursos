@@ -9,7 +9,7 @@ namespace Cursos.Application.Intefaces
     {
         IEnumerable<EnderecoViewModel> List();
         void Add(EnderecoViewModel endereco);
-        void Remove(Guid id);
+        void Remove(EnderecoViewModel endereco);
         void Update(EnderecoViewModel endereco);
         EnderecoViewModel Find(Guid id);
     }

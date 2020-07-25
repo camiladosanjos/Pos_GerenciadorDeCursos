@@ -35,9 +35,9 @@ namespace Cursos.Application.Services
             return _mapper.Map<IEnumerable<DisciplinaViewModel>>(disciplinas);
         }
 
-        public void Remove(Guid id)
+        public void Remove(DisciplinaViewModel disciplina)
         {
-            _disciplinaService.Remove(id);
+            _disciplinaService.Remove(_mapper.Map<Disciplina>(disciplina));
         }
 
         public void Update(DisciplinaViewModel disciplina)

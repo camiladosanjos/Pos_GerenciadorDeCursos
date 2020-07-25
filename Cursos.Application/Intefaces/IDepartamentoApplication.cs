@@ -9,7 +9,7 @@ namespace Cursos.Application.Intefaces
     {
         IEnumerable<DepartamentoViewModel> List();
         void Add(DepartamentoViewModel departamento);
-        void Remove(Guid id);
+        void Remove(DepartamentoViewModel departamento);
         void Update(DepartamentoViewModel departamento);
         DepartamentoViewModel Find(Guid id);
     }

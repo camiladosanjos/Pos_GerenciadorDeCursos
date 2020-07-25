@@ -35,9 +35,9 @@ namespace Cursos.Application.Services
             return _mapper.Map<IEnumerable<EnderecoViewModel>>(enderecos);
         }
 
-        public void Remove(Guid id)
+        public void Remove(EnderecoViewModel endereco)
         {
-            _enderecoService.Remove(id);
+            _enderecoService.Remove(_mapper.Map<Endereco>(endereco));
         }
 
         public void Update(EnderecoViewModel endereco)

@@ -36,9 +36,9 @@ namespace Cursos.Application.Services
             return _mapper.Map<IEnumerable<CursoViewModel>>(cursos);
         }
 
-        public void Remove(Guid id)
+        public void Remove(CursoViewModel curso)
         {
-            _cursoService.Remove(id);
+            _cursoService.Remove(_mapper.Map<Curso>(curso));
         }
 
         public void Update(CursoViewModel curso)

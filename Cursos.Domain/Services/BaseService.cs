@@ -28,9 +28,9 @@ namespace Cursos.Domain.Services
             return _baseRepository.Find(id);
         }
 
-        public void Remove(Guid id)
+        public void Remove(T entity)
         {
-            _baseRepository.Remove(id);
+            _baseRepository.Remove(entity);
         }
 
         public void Update(T entity)
